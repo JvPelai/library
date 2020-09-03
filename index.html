@@ -1,6 +1,4 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -10,21 +8,31 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-      <h1>Add a new book to your library!</h1>
-      <div class="dropdown">
-      <button onclick="addBook()" class="dropbtn">add book</button>
-      <div id="myDropdown" class="dropdown-content">
-          <input class="newTitle" type="text" placeholder="Title"> <br>  
-          <input class="newAuthor" type="text" placeholder="author"> <br>    
-          <input class="pages" type="text" placeholder="pages"><br> 
-          <p> Have you read this book?</p> 
-          <input  name="read" type="radio" value="yes">
-          <label for="yes">yes</label>
-          <input  name="read" type="radio" value="no">
-          <label for="no">no</label><br>
-          <button onclick="addToLibrary()">Add</button>
-      </div>
-      </div>
+        <h1>Add a new book to your library!</h1>
+        <div class="dropdown">
+            <button onclick="addBook()" class="dropbtn">add book</button>
+            <div id="myDropdown" class="dropdown-content">
+                <input class="newTitle" type="text" placeholder="Title">
+                <br>
+                <input class="newAuthor" type="text" placeholder="author">
+                <br>
+                <input class="pages" type="text" placeholder="pages">
+                <br>
+                <p> Have you read this book?</p>
+                <input name="read" type="radio" value="yes">
+                <label for="yes">yes</label>
+                <input name="read" type="radio" value="no">
+                <label for="no">no</label>
+                <br>
+                <button onclick="addToLibrary(),renderBooks()">Add</button>
+            </div>
+        </div>
+        <section id="lib-container">
+            <div>
+                <h1>My Library</h1>
+            </div>
+            <div id="lib-bookshelf" onload="renderBooks()"></div>
+        </section>
         <script src="script.js" defer></script>
     </body>
 </html>
